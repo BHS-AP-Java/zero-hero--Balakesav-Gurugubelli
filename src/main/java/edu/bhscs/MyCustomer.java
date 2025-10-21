@@ -22,7 +22,7 @@ public class MyCustomer {
   }
 
   // Method to print the customers message
-  public void PrintMessage() {
+  public void printMessage() {
     System.out.println(customerMessage);
   }
 }

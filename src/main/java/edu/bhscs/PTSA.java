@@ -24,7 +24,7 @@ public class PTSA {
   }
 
   // Method to print the amount of money the PTSA leader has.
-  public void PrintMoneyLevel() {
+  public void printMoneyLevel() {
     System.out.println(leader + ", the PTSA leader has " + money + " dollars!");
   }
 }

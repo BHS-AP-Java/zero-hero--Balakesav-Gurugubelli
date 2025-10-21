@@ -19,23 +19,25 @@ package edu.bhscs;
 public class Main {
   public static void main(String[] args) {
     // Create a input class to get user input
-    Input.Initialize();
+    Input.initialize();
 
     // Draw a test cake
     System.out.print("Cake Size: ");
-    int size = Integer.parseInt(Input.GetInput());
+    int size = Integer.parseInt(Input.getInput());
 
     System.out.print("Cake Color: ");
-    String color = Input.GetInput();
+    String color = Input.getInput();
 
     Cake testcake = new Cake("chocolate", new Flour(10), 10, size, color, "~");
+
+    testcake.draw();
 
     // Initialize a cake with one of the CakeTypes enum values
     MyCake cake = new MyCake("round", CakeTypes.Vanilla, 10);
 
     // Initialize the baker
     MyBaker baker = new MyBaker(10, "Bob", 2);
-    baker.Bake(cake);
+    baker.bake(cake);
 
     System.out.println("The cake is evil!");
 
@@ -52,7 +54,7 @@ public class Main {
       System.out.print("Choose your move: ");
 
       // Get user input
-      String move = Input.GetInput();
+      String move = Input.getInput();
 
       // Choose to either attack or quit based on what the user wants to do
       if (move.equals("a") || move.equals("slash")) {
@@ -87,14 +89,14 @@ public class Main {
 
         System.out.println();
         System.out.print("Here's what the customer has to say: ");
-        customer.PrintMessage();
+        customer.printMessage();
 
         System.out.print("Choose how much money to donate: ");
-        String money = Input.GetInput();
+        String money = Input.getInput();
 
         // Initialize a PTSA with the amount of money donated
         PTSA ptsa = new PTSA(Integer.parseInt(money), "Mr. Reiber");
-        ptsa.PrintMoneyLevel();
+        ptsa.printMoneyLevel();
 
         // Tell the outer loop to stop executing the loop
         continueGame = false;
@@ -111,6 +113,6 @@ public class Main {
     reiberBaker.takeOrder(10, reiberCustomer);
 
     // Close our scanner
-    Input.CloseScanner();
+    Input.closeScanner();
   }
 }

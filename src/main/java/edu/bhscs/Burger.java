@@ -20,7 +20,7 @@ public class Burger {
     this.name = name;
   }
 
-  void Draw() {
+  void draw() {
     System.out.println(duplicateCharacters(" ", 9));
     System.out.println("  " + duplicateCharacters("#", 5) + "  ");
     System.out.println(duplicateCharacters("#", 9));

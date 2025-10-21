@@ -26,7 +26,7 @@ public class MyBaker {
   }
 
   // print that the baker baked a cake
-  public void Bake(MyCake cake) {
+  public void bake(MyCake cake) {
     System.out.println("I, " + name + " baked a " + cake.getReadableName() + "!");
   }
 }

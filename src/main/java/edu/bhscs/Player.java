@@ -15,8 +15,14 @@ package edu.bhscs;
 
 // Wrapper for Reiber Baker
 public class Player {
+  public Player(){
+    if(Input.scanner == null){
+      Input.initialize();
+    }
+  }
+
   public String giveAnswer(String message) {
     System.out.println(message);
-    return Input.GetInput();
+    return Input.getInput();
   }
 }

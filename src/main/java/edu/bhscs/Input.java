@@ -18,15 +18,15 @@ import java.util.Scanner;
 public class Input {
   public static Scanner scanner;
 
-  public static void Initialize() {
+  public static void initialize() {
     scanner = new Scanner(System.in);
   }
 
-  public static String GetInput() {
+  public static String getInput() {
     return scanner.nextLine();
   }
 
-  public static void CloseScanner() {
+  public static void closeScanner() {
     scanner.close();
   }
 }

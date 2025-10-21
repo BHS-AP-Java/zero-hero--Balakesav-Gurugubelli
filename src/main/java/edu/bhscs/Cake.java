@@ -29,8 +29,6 @@ public class Cake {
     this.size = size;
     this.color = color;
     this.frosting = frosting;
-
-    draw();
   }
 
   public void draw() {
