@@ -41,7 +41,7 @@ public class Baker {
     return new Cake(answer, this.f, skill, 5, "#", "~");
   }
 
-  public void GainSkill(int amount) {
+  public void gainSkill(int amount) {
     skill += amount;
   }
 
