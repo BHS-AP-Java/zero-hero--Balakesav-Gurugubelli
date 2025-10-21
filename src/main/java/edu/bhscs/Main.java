@@ -18,7 +18,17 @@ package edu.bhscs;
 
 public class Main {
   public static void main(String[] args) {
-    Cake testcake = new Cake("chocolate", new Flour(10), 10, 10, "#", "~");
+    // Create a input class to get user input
+    Input.Initialize();
+
+    // Draw a test cake
+    System.out.print("Cake Size: ");
+    int size = Integer.parseInt(Input.GetInput());
+
+    System.out.print("Cake Color: ");
+    String color = Input.GetInput();
+
+    Cake testcake = new Cake("chocolate", new Flour(10), 10, size, color, "~");
 
     // Initialize a cake with one of the CakeTypes enum values
     MyCake cake = new MyCake("round", CakeTypes.Vanilla, 10);
@@ -28,9 +38,6 @@ public class Main {
     baker.Bake(cake);
 
     System.out.println("The cake is evil!");
-
-    // Create a input class to get user input
-    Input.Initialize();
 
     // A variable to tell the while loop when to stop executing the main game loop
     Boolean continueGame = true;
