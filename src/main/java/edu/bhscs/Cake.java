@@ -51,8 +51,8 @@ public class Cake {
     // slices
     for (int angle = 0; angle < 360; angle += 30) {
       for (float i = 0; i < size; i += 0.1) {
-        int x =  ((int) Math.round(Math.cos(angle) * i)) + size;
-        int y =  ((int) Math.round(Math.sin(angle) * i)) + size;
+        int x = ((int) Math.round(Math.cos(angle) * i)) + size;
+        int y = ((int) Math.round(Math.sin(angle) * i)) + size;
 
         viewArray[y][x] = this.color;
       }
