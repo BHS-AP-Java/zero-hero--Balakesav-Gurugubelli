@@ -32,7 +32,6 @@ public class Cake {
   }
 
   public void draw() {
-    // size must be even
     int arraySize = size * 2 + 1;
 
     // initialize array
