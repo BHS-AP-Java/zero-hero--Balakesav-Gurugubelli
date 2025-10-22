@@ -35,7 +35,7 @@ public class Main {
     System.out.print("Cake Color (Enter a single character, such as \"#\"): ");
     String color = Input.getInput();
 
-    Cake testcake = new Cake("chocolate", new Flour(10), 10, size, color, "~");
+    Cake testcake = new Cake(size, color, "~");
 
     testcake.draw();
 

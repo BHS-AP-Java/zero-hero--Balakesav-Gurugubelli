@@ -24,7 +24,16 @@ public class Cake {
   String color;
   String frosting; // unused right now
 
-  public Cake(String type, Flour flour, int quality, int size, String color, String frosting) {
+  public Cake(int size, String color, String frosting) {
+    this.type = "vanilla";
+    this.flour = new Flour(0);
+    this.quality = 0;
+    this.size = size;
+    this.color = color;
+    this.frosting = frosting;
+  }
+
+  public Cake(int size, String color, String frosting, String type, Flour flour, int quality) {
     this.type = type;
     this.flour = flour;
     this.quality = quality;
@@ -84,15 +93,5 @@ public class Cake {
 
       System.out.println();
     }
-  }
-
-  String duplicateCharacters(String character, int count) {
-    String output = "";
-
-    for (int i = 0; i < count; i++) {
-      output += character;
-    }
-
-    return output;
   }
 }

@@ -38,7 +38,7 @@ public class Baker {
 
   Cake bakeCake() {
     String answer = this.p.giveAnswer("what cake do you you want?");
-    return new Cake(answer, this.f, skill, 5, "#", "~");
+    return new Cake(5, "#", "~", answer, this.f, skill);
   }
 
   public void gainSkill(int amount) {
