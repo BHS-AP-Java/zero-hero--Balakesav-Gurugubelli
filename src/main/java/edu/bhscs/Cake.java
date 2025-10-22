@@ -4,11 +4,11 @@
 // 9/19
 
 /*
- * DESCRIPTION: A cake for Mr. Reiber's baker class to work
+ * DESCRIPTION: A cake that a) can be drawn b) has required properties for Mr. Reiber's baker class
  *
- * INPUT: The type of cake, the flour class, and an integer quality
+ * INPUT: The type of cake, the flour class, and an integer quality, the size, the character used to draw, and the character used for frosting
  * OUTPUT: Prints a cake pattern
- * EDGE CASE: No Edge Case
+ * EDGE CASE: Big enough cakes don't fit in terminal
  */
 
 package edu.bhscs;
