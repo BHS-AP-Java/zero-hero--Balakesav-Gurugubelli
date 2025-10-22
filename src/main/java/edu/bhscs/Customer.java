@@ -21,7 +21,7 @@ public class Customer {
   }
 
   public int pay(int money) {
-    System.out.println("I, " + name + " am paying " + money + "!");
+    System.out.println("I, " + name + ", the customer am paying $" + money + " for this!");
     return money;
   }
 

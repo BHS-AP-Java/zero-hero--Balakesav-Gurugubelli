@@ -22,10 +22,10 @@ public class Main {
     Input.initialize();
 
     // Draw a test cake
-    System.out.print("Cake Size: ");
+    System.out.print("Cake Size (Recommended between 10-30): ");
     int size = Integer.parseInt(Input.getInput());
 
-    System.out.print("Cake Color: ");
+    System.out.print("Cake Color (Enter a single character): ");
     String color = Input.getInput();
 
     Cake testcake = new Cake("chocolate", new Flour(10), 10, size, color, "~");
@@ -102,6 +102,14 @@ public class Main {
         continueGame = false;
       }
     }
+
+    System.out.println();
+    System.out.println();
+    System.out.println("Now, Mr. Reiber's baker class is going to execute");
+    System.out.println("This class could not be modified according to the instructions");
+    System.out.println("In this scenario, you are going to be playing as both the baker and the customer.");
+    System.out.println();
+    System.out.println();
 
     // Here is Mr. Reiber's baker class
     Player reiberPlayer = new Player();
