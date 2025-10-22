@@ -22,11 +22,11 @@ public class Main {
     Input.initialize();
 
     System.out.println("Welcome to my code!");
-    System.out.println("Here's what happens in this program");
+    System.out.println("Here's what happens in this program:");
     System.out.println("1. Draw a cake");
     System.out.println("2. Fight an evil cake");
     System.out.println("3. Mr. Reiber's required baker class");
-
+    System.out.println();
 
     // Draw a test cake
     System.out.print("Cake Size (Recommended between 10-30): ");
