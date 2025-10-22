@@ -21,11 +21,18 @@ public class Main {
     // Create a input class to get user input
     Input.initialize();
 
+    System.out.println("Welcome to my code!");
+    System.out.println("Here's what happens in this program");
+    System.out.println("1. Draw a cake");
+    System.out.println("2. Fight an evil cake");
+    System.out.println("3. Mr. Reiber's required baker class");
+
+
     // Draw a test cake
     System.out.print("Cake Size (Recommended between 10-30): ");
     int size = Integer.parseInt(Input.getInput());
 
-    System.out.print("Cake Color (Enter a single character): ");
+    System.out.print("Cake Color (Enter a single character, such as \"#\"): ");
     String color = Input.getInput();
 
     Cake testcake = new Cake("chocolate", new Flour(10), 10, size, color, "~");
