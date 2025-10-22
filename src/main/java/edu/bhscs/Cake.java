@@ -48,7 +48,7 @@ public class Cake {
     // initialize array
     String[][] viewArray = Renderer.initializeArray(arraySize, " ");
 
-    // create circle using sin and cosine
+    // create circle using sin and cosine functions -,mp[ ]
     for (int angle = 0; angle < 360; angle++) {
       int x = (int) Math.round(Math.cos(angle) * size) + size;
       int y = (int) Math.round(Math.sin(angle) * size) + size;
