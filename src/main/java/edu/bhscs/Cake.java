@@ -46,7 +46,7 @@ public class Cake {
     int arraySize = size * 2 + 1;
 
     // initialize array
-    String[][] viewArray = initializeArray(arraySize, " ");
+    String[][] viewArray = Renderer.initializeArray(arraySize, " ");
 
     // create circle using sin and cosine
     for (int angle = 0; angle < 360; angle++) {
@@ -67,31 +67,6 @@ public class Cake {
     }
 
     // print cake
-    printArray(viewArray);
-  }
-
-  String[][] initializeArray(int arraySize, String character) {
-    String[][] array = new String[arraySize][arraySize];
-
-    for (int y = 0; y < arraySize; y++) {
-      String[] row = new String[arraySize];
-      for (int x = 0; x < arraySize; x++) {
-        row[x] = character;
-      }
-
-      array[y] = row;
-    }
-
-    return array;
-  }
-
-  void printArray(String[][] array) {
-    for (int y = 0; y < array.length; y++) {
-      for (int x = 0; x < array.length; x++) {
-        System.out.print(array[y][x]);
-      }
-
-      System.out.println();
-    }
+    Renderer.printArray(viewArray);
   }
 }
