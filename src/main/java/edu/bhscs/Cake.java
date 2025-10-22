@@ -13,14 +13,16 @@
 
 package edu.bhscs;
 
-// Reiber Baker Wrapper
 public class Cake {
+  // useless
   Flour flour;
   String type;
   int quality;
+
+  // useful
   int size;
   String color;
-  String frosting;
+  String frosting; // unused right now
 
   public Cake(String type, Flour flour, int quality, int size, String color, String frosting) {
     this.type = type;
