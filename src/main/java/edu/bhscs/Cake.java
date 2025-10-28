@@ -19,6 +19,8 @@ public class Cake {
   String type;
   int quality;
 
+  String name;
+
   // useful
   int size;
   String color;
@@ -40,6 +42,11 @@ public class Cake {
     this.size = size;
     this.color = color;
     this.frosting = frosting;
+  }
+
+  public Cake(int width, String name) {
+    this.size = width;
+    this.name = name;
   }
 
   public void draw() {
@@ -67,6 +74,29 @@ public class Cake {
     }
 
     // print cake
+    Renderer.printArray(viewArray);
+  }
+
+  // reiber date10_27
+  // why is the cake drawing the table???
+  public void draw(Table table) {
+    int lengthPerLeg = 3;
+    int width = table.legs * lengthPerLeg;
+
+    String [][] viewArray = Renderer.initializeArray(width, " ");
+
+    table.verify();
+
+    for(int i = 0; i < table.legs; i++){
+      for(int y = 0; y < table.height; y++){
+        viewArray[y][i * lengthPerLeg + (lengthPerLeg / 2)] = table.legCharacter;
+      }
+    }
+
+    for(int x = 0; x < width; x++){
+      viewArray[0][x] = table.topCharacter;
+    }
+
     Renderer.printArray(viewArray);
   }
 }

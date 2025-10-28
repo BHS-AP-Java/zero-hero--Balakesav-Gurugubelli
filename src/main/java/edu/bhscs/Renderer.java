@@ -16,6 +16,21 @@ public class Renderer {
     return array;
   }
 
+  public static String[][] initializeArray(int xSize, int ySize, String character) {
+    String[][] array = new String[ySize][xSize];
+
+    for (int y = 0; y < ySize; y++) {
+      String[] row = new String[xSize];
+      for (int x = 0; x < xSize; x++) {
+        row[x] = character;
+      }
+
+      array[y] = row;
+    }
+
+    return array;
+  }
+
   public static void printArray(String[][] array) {
     for (int y = 0; y < array.length; y++) {
       for (int x = 0; x < array.length; x++) {

@@ -30,6 +30,11 @@ public class Baker {
     this.name = name;
   }
 
+  public Baker(String name) {
+    this.p = new Player();
+    this.name = name;
+  }
+
   // METHODS
   void takeOrder(int price, Customer c) {
     cash += c.pay(price);
@@ -39,6 +44,11 @@ public class Baker {
   Cake bakeCake() {
     String answer = this.p.giveAnswer("what cake do you you want?");
     return new Cake(5, "#", "~", answer, this.f, skill);
+  }
+
+  // reiber date10_27
+  Cake bakes(int width, String name) {
+    return new Cake(width, name);
   }
 
   public void gainSkill(int amount) {

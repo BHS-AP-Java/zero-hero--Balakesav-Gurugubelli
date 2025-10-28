@@ -17,7 +17,12 @@
 package edu.bhscs;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args){
+    // mainProgram(args);
+
+    date10_27();
+  }
+  public static void mainProgram(String[] args) {
     // Create a input class to get user input
     Input.initialize();
 
@@ -114,7 +119,8 @@ public class Main {
     System.out.println();
     System.out.println("Now, Mr. Reiber's baker class is going to execute");
     System.out.println("This class could not be modified according to the instructions");
-    System.out.println("In this scenario, you are going to be playing as both the baker and the customer.");
+    System.out.println(
+        "In this scenario, you are going to be playing as both the baker and the customer.");
     System.out.println();
     System.out.println();
 
@@ -129,5 +135,15 @@ public class Main {
 
     // Close our scanner
     Input.closeScanner();
+  }
+
+  public static void date10_27() {
+    Cake cake = new Cake(20, "#", "~");
+    cake.draw();
+
+    Baker bob = new Baker("Bob");
+    Table t = new Table(3, 15);
+    Cake bDay = bob.bakes(5, "Suzzie");
+    bDay.draw(t);
   }
 }
