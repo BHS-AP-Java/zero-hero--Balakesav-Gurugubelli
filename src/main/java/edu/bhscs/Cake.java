@@ -80,20 +80,27 @@ public class Cake {
   // reiber date10_27
   // why is the cake drawing the table???
   public void draw(Table table) {
-    int lengthPerLeg = 3;
-    int width = table.legs * lengthPerLeg;
+    int widthPerLeg = table.width / table.legs;
+    int width = widthPerLeg * table.legs;
 
-    String [][] viewArray = Renderer.initializeArray(width, " ");
+    // draw cake
+    this.size = width / 2;
+    this.color = "#";
+
+    draw();
+
+    // draw table
+    String[][] viewArray = Renderer.initializeArray(width, " ");
 
     table.verify();
 
-    for(int i = 0; i < table.legs; i++){
-      for(int y = 0; y < table.height; y++){
-        viewArray[y][i * lengthPerLeg + (lengthPerLeg / 2)] = table.legCharacter;
+    for (int i = 0; i < table.legs; i++) {
+      for (int y = 0; y < table.height; y++) {
+        viewArray[y][i * widthPerLeg + (widthPerLeg / 2)] = table.legCharacter;
       }
     }
 
-    for(int x = 0; x < width; x++){
+    for (int x = 0; x < width; x++) {
       viewArray[0][x] = table.topCharacter;
     }
 
