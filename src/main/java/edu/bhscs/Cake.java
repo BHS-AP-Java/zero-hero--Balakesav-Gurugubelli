@@ -24,7 +24,7 @@ public class Cake {
   // useful
   int size;
   String color;
-  String frosting; // unused right now
+  String frosting; // not implemented
 
   public Cake(int size, String color, String frosting) {
     this.type = "vanilla";
@@ -79,14 +79,16 @@ public class Cake {
 
   // reiber date10_27
   // why is the cake drawing the table???
+  // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its size to match the table which it's placed on.
   public void draw(Table table) {
     int widthPerLeg = table.width / table.legs;
     int modifiedWidth = table.width - (table.width % table.legs);
 
-    // draw cake
+    // we are setting the cake color and size, rather than using the properties, because the required 10_27 code does not construct the cake using a color and size parameter
     this.size = modifiedWidth / 2;
     this.color = "#";
 
+    // draw cake using the cake draw method
     draw();
 
     // draw table
