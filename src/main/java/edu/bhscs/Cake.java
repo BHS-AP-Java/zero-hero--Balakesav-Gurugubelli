@@ -81,16 +81,16 @@ public class Cake {
   // why is the cake drawing the table???
   public void draw(Table table) {
     int widthPerLeg = table.width / table.legs;
-    int width = widthPerLeg * table.legs;
+    int modifiedWidth = table.width - (table.width % table.legs);
 
     // draw cake
-    this.size = width / 2;
+    this.size = modifiedWidth / 2;
     this.color = "#";
 
     draw();
 
     // draw table
-    String[][] viewArray = Renderer.initializeArray(width, " ");
+    String[][] viewArray = Renderer.initializeArray(modifiedWidth, " ");
 
     table.verify();
 
@@ -100,7 +100,7 @@ public class Cake {
       }
     }
 
-    for (int x = 0; x < width; x++) {
+    for (int x = 0; x < modifiedWidth; x++) {
       viewArray[0][x] = table.topCharacter;
     }
 
