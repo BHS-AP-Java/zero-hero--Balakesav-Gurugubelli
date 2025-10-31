@@ -8,7 +8,7 @@
  *
  * INPUT: The type of cake, the flour class, and an integer quality, the size, the character used to draw, and the character used for frosting
  * OUTPUT: Prints a cake pattern
- * EDGE CASE: Big enough cakes don't fit in terminal
+ * EDGE CASE: Big enough cakesdon't fit in terminal
  */
 
 package edu.bhscs;
