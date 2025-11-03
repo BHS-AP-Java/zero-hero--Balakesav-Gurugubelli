@@ -31,8 +31,21 @@ public class Renderer {
     return array;
   }
 
-  public static void printArray(String[][] array) {
+  public static void printArray(String[][] array){
+    printArray(array, 0);
+  }
+
+  public static void printArray(String[][] array, int offset) {
+    String offsetString = " ";
+
+    // initialize offsetString with a number of spaces equal to the offset
+    for(int i = 0; i < offset; i++){
+      offsetString += " ";
+    }
+
     for (int y = 0; y < array.length; y++) {
+      System.out.print(offsetString);
+
       for (int x = 0; x < array.length; x++) {
         System.out.print(array[y][x]);
       }

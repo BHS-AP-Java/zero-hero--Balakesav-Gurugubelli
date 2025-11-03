@@ -49,7 +49,7 @@ public class Cake {
     this.name = name;
   }
 
-  public void draw() {
+  public void draw(int offset) {
     int arraySize = size * 2 + 1;
 
     // initialize array
@@ -74,22 +74,37 @@ public class Cake {
     }
 
     // print cake
-    Renderer.printArray(viewArray);
+    Renderer.printArray(viewArray, offset);
+  }
+
+  public void draw(){
+    draw(0);
   }
 
   // reiber date10_27
   // why is the cake drawing the table???
-  // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its size to match the table which it's placed on.
+  // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its
+  // size to match the table which it's placed on.
   public void draw(Table table) {
     int widthPerLeg = table.width / table.legs;
     int modifiedWidth = table.width - (table.width % table.legs);
 
-    // we are setting the cake color and size, rather than using the properties, because the required 10_27 code does not construct the cake using a color and size parameter
-    this.size = modifiedWidth / 2;
+    // we are setting the cake color, rather than using the properties, because the
+    // required 10_27 code does not construct the cake using a color parameter
     this.color = "#";
 
-    // draw cake using the cake draw method
-    draw();
+    int cakeSize = size * 2;
+
+    int tableOffset = 0;
+
+    // calculate offsets and draw cake
+    if(cakeSize <= modifiedWidth){
+      draw((modifiedWidth - cakeSize) / 2);
+    }
+    else{
+      tableOffset = (cakeSize - modifiedWidth) / 2;
+      draw();
+    }
 
     // draw table
     String[][] viewArray = Renderer.initializeArray(modifiedWidth, " ");
@@ -106,6 +121,6 @@ public class Cake {
       viewArray[0][x] = table.topCharacter;
     }
 
-    Renderer.printArray(viewArray);
+    Renderer.printArray(viewArray, tableOffset);
   }
 }
