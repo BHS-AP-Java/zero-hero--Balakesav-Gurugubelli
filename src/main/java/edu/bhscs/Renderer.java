@@ -2,18 +2,7 @@ package edu.bhscs;
 
 public class Renderer {
   public static String[][] initializeArray(int arraySize, String character) {
-    String[][] array = new String[arraySize][arraySize];
-
-    for (int y = 0; y < arraySize; y++) {
-      String[] row = new String[arraySize];
-      for (int x = 0; x < arraySize; x++) {
-        row[x] = character;
-      }
-
-      array[y] = row;
-    }
-
-    return array;
+    return initializeArray(arraySize, arraySize, character);
   }
 
   public static String[][] initializeArray(int xSize, int ySize, String character) {

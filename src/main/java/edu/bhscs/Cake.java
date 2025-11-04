@@ -107,7 +107,7 @@ public class Cake {
     int cakeOffset = 0;
     int tableOffset = 0;
 
-    // calculate offsets and draw cake
+    // calculate offsets
     int offset = Math.abs(modifiedTableWidth - cakeSize) / 2;
 
     if (cakeSize <= modifiedTableWidth) {
