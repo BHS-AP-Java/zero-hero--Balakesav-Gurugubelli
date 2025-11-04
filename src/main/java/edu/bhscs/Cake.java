@@ -77,7 +77,7 @@ public class Cake {
     Renderer.printArray(viewArray, offset);
   }
 
-  public void draw(){
+  public void draw() {
     draw(0);
   }
 
@@ -86,41 +86,36 @@ public class Cake {
   // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its
   // size to match the table which it's placed on.
   public void draw(Table table) {
-    int widthPerLeg = table.width / table.legs;
-    int modifiedWidth = table.width - (table.width % table.legs);
-
     // we are setting the cake color, rather than using the properties, because the
     // required 10_27 code does not construct the cake using a color parameter
     this.color = "#";
 
-    int cakeSize = size * 2;
+    // [cakeOffset, tableOffset]
+    int[] offsets = calculateOffsets(table);
 
+    // draw table
+    table.verify();
+
+    draw(offsets[0]);
+    table.draw(offsets[1]);
+  }
+
+  public int[] calculateOffsets(Table table){
+    int cakeSize = size * 2 + 1;
+    int modifiedTableWidth = table.width - (table.width % table.legs);
+
+    int cakeOffset = 0;
     int tableOffset = 0;
 
     // calculate offsets and draw cake
-    if(cakeSize <= modifiedWidth){
-      draw((modifiedWidth - cakeSize) / 2);
-    }
-    else{
-      tableOffset = (cakeSize - modifiedWidth) / 2;
-      draw();
+    if (cakeSize <= modifiedTableWidth) {
+      cakeOffset = (modifiedTableWidth - cakeSize) / 2;
+    } else {
+      tableOffset = (cakeSize - modifiedTableWidth) / 2;
     }
 
-    // draw table
-    String[][] viewArray = Renderer.initializeArray(modifiedWidth, " ");
+    int[] offsets = new int[]{cakeOffset, tableOffset};
 
-    table.verify();
-
-    for (int i = 0; i < table.legs; i++) {
-      for (int y = 0; y < table.height; y++) {
-        viewArray[y][i * widthPerLeg + (widthPerLeg / 2)] = table.legCharacter;
-      }
-    }
-
-    for (int x = 0; x < modifiedWidth; x++) {
-      viewArray[0][x] = table.topCharacter;
-    }
-
-    Renderer.printArray(viewArray, tableOffset);
+    return offsets;
   }
 }

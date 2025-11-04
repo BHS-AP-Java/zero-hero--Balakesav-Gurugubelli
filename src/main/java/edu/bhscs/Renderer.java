@@ -31,15 +31,15 @@ public class Renderer {
     return array;
   }
 
-  public static void printArray(String[][] array){
+  public static void printArray(String[][] array) {
     printArray(array, 0);
   }
 
   public static void printArray(String[][] array, int offset) {
-    String offsetString = " ";
+    String offsetString = "";
 
     // initialize offsetString with a number of spaces equal to the offset
-    for(int i = 0; i < offset; i++){
+    for (int i = 0; i < offset; i++) {
       offsetString += " ";
     }
 

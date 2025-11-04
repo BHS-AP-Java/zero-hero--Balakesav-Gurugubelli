@@ -43,4 +43,23 @@ public class Table {
       topCharacter = "_";
     }
   }
+
+  public void draw(int offset){
+    int widthPerLeg = width / legs;
+    int modifiedWidth = width - (width % legs);
+
+    String[][] viewArray = Renderer.initializeArray(modifiedWidth, " ");
+
+    for (int i = 0; i < legs; i++) {
+      for (int y = 0; y < height; y++) {
+        viewArray[y][i * widthPerLeg + (widthPerLeg / 2)] = legCharacter;
+      }
+    }
+
+    for (int x = 0; x < modifiedWidth; x++) {
+      viewArray[0][x] = topCharacter;
+    }
+
+    Renderer.printArray(viewArray, offset);
+  }
 }
