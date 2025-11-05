@@ -18,16 +18,7 @@ package edu.bhscs;
 
 public class Main {
   public static void main(String[] args) {
-    // mainProgram(args);
-
-    date10_27();
-  }
-
-  public static void date10_27() {
-    Baker bob = new Baker("Bob");
-    Table t = new Table(3, 30);
-    Cake bDay = bob.bakes(10, "Suzzie");
-    bDay.draw(t);
+    mainProgram(args);
   }
 
   public static void mainProgram(String[] args) {

@@ -100,7 +100,7 @@ public class Cake {
     table.draw(offsets[1]);
   }
 
-  public int[] calculateOffsets(Table table){
+  public int[] calculateOffsets(Table table) {
     int cakeSize = size * 2 + 1;
     int modifiedTableWidth = table.width - (table.width % table.legs);
 
@@ -116,7 +116,7 @@ public class Cake {
       tableOffset = offset;
     }
 
-    int[] offsets = new int[]{cakeOffset, tableOffset};
+    int[] offsets = new int[] {cakeOffset, tableOffset};
 
     return offsets;
   }

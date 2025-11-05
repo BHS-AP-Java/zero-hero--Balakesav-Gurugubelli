@@ -44,7 +44,7 @@ public class Table {
     }
   }
 
-  public void draw(int offset){
+  public void draw(int offset) {
     int widthPerLeg = width / legs;
     int modifiedWidth = width - (width % legs);
 
