@@ -77,6 +77,10 @@ public class Cake {
     Renderer.printArray(viewArray, offset);
   }
 
+  public void setColor(String color){
+    this.color = color;
+  }
+
   public void draw() {
     draw(0);
   }
@@ -88,7 +92,7 @@ public class Cake {
   public void draw(Table table) {
     // we are setting the cake color, rather than using the properties, because the
     // required 10_27 code does not construct the cake using a color parameter
-    this.color = "#";
+    // this.color = "#";
 
     // [cakeOffset, tableOffset]
     int[] offsets = calculateOffsets(table);
