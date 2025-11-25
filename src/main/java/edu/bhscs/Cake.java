@@ -79,12 +79,14 @@ public class Cake {
 
   // reiber date10_27
   // why is the cake drawing the table???
-  // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its size to match the table which it's placed on.
+  // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its
+  // size to match the table which it's placed on.
   public void draw(Table table) {
     int widthPerLeg = table.width / table.legs;
     int modifiedWidth = table.width - (table.width % table.legs);
 
-    // we are setting the cake color and size, rather than using the properties, because the required 10_27 code does not construct the cake using a color and size parameter
+    // we are setting the cake color and size, rather than using the properties, because the
+    // required 10_27 code does not construct the cake using a color and size parameter
     this.size = modifiedWidth / 2;
     this.color = "#";
 
