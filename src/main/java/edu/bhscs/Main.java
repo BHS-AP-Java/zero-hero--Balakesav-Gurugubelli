@@ -18,9 +18,7 @@ package edu.bhscs;
 
 public class Main {
   public static void main(String[] args) {
-    // mainProgram(args);
-
-    date10_27();
+    mainProgram(args);
   }
 
   public static void mainProgram(String[] args) {
@@ -136,12 +134,5 @@ public class Main {
 
     // Close our scanner
     Input.closeScanner();
-  }
-
-  public static void date10_27() {
-    Baker bob = new Baker("Bob");
-    Table t = new Table(3, 15);
-    Cake bDay = bob.bakes(5, "Suzzie");
-    bDay.draw(t);
   }
 }

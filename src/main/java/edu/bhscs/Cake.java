@@ -49,7 +49,7 @@ public class Cake {
     this.name = name;
   }
 
-  public void draw() {
+  public void draw(int offset) {
     int arraySize = size * 2 + 1;
 
     // initialize array
@@ -74,7 +74,15 @@ public class Cake {
     }
 
     // print cake
-    Renderer.printArray(viewArray);
+    Renderer.printArray(viewArray, offset);
+  }
+
+  public void setColor(String color){
+    this.color = color;
+  }
+
+  public void draw() {
+    draw(0);
   }
 
   // reiber date10_27
@@ -82,32 +90,38 @@ public class Cake {
   // the cake isn't really drawing itself "on top" of the table, the cake is simply adjusting its
   // size to match the table which it's placed on.
   public void draw(Table table) {
-    int widthPerLeg = table.width / table.legs;
-    int modifiedWidth = table.width - (table.width % table.legs);
+    // we are setting the cake color, rather than using the properties, because the
+    // required 10_27 code does not construct the cake using a color parameter
+    // this.color = "#";
 
-    // we are setting the cake color and size, rather than using the properties, because the
-    // required 10_27 code does not construct the cake using a color and size parameter
-    this.size = modifiedWidth / 2;
-    this.color = "#";
-
-    // draw cake using the cake draw method
-    draw();
+    // [cakeOffset, tableOffset]
+    int[] offsets = calculateOffsets(table);
 
     // draw table
-    String[][] viewArray = Renderer.initializeArray(modifiedWidth, " ");
-
     table.verify();
 
-    for (int i = 0; i < table.legs; i++) {
-      for (int y = 0; y < table.height; y++) {
-        viewArray[y][i * widthPerLeg + (widthPerLeg / 2)] = table.legCharacter;
-      }
+    draw(offsets[0]);
+    table.draw(offsets[1]);
+  }
+
+  public int[] calculateOffsets(Table table) {
+    int cakeSize = size * 2 + 1;
+    int modifiedTableWidth = table.width - (table.width % table.legs);
+
+    int cakeOffset = 0;
+    int tableOffset = 0;
+
+    // calculate offsets
+    int offset = Math.abs(modifiedTableWidth - cakeSize) / 2;
+
+    if (cakeSize <= modifiedTableWidth) {
+      cakeOffset = offset;
+    } else {
+      tableOffset = offset;
     }
 
-    for (int x = 0; x < modifiedWidth; x++) {
-      viewArray[0][x] = table.topCharacter;
-    }
+    int[] offsets = new int[] {cakeOffset, tableOffset};
 
-    Renderer.printArray(viewArray);
+    return offsets;
   }
 }
