@@ -55,7 +55,7 @@ public class Cake implements Offsettable {
     // initialize array
     String[][] viewArray = Renderer.initializeArray(arraySize, " ");
 
-    // create circle using sin and cosine functions -,mp[ ]
+    // create circle using sin and cosine functions
     for (int angle = 0; angle < 360; angle++) {
       int x = (int) Math.round(Math.cos(angle) * size) + size;
       int y = (int) Math.round(Math.sin(angle) * size) + size;
