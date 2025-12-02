@@ -13,7 +13,7 @@
 
 package edu.bhscs;
 
-public class Cake {
+public class Cake implements Offsettable {
   // useless
   Flour flour;
   String type;
@@ -77,7 +77,7 @@ public class Cake {
     Renderer.printArray(viewArray, offset);
   }
 
-  public void setColor(String color){
+  public void setColor(String color) {
     this.color = color;
   }
 

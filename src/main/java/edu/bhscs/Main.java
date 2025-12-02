@@ -18,8 +18,34 @@ package edu.bhscs;
 
 public class Main {
   public static void main(String[] args) {
-    mainProgram(args);
+    CakeDrawExample(args);
+
+    // mainProgram(args);
   }
+
+  public static void CakeDrawExample(String[] args) {
+    // cake variables
+    int size = 5;
+    String color = "#";
+    String frosting = "~"; // not implemented
+    int cakeOffset = 5;
+
+    // table variables
+    int legs = 5;
+    int width = 20;
+    int height = 6;
+    String topCharacter = "_";
+    String legCharacter = "|";
+    int tableOffset = 0;
+
+    // draw cake and table
+    Cake cake = new Cake(size, color, frosting);
+    cake.draw(cakeOffset);
+
+    Table table = new Table(legs, width, height, topCharacter, legCharacter);
+    table.draw(tableOffset);
+  }
+
 
   public static void mainProgram(String[] args) {
     // Create a input class to get user input

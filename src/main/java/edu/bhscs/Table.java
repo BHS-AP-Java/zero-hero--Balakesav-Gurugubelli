@@ -10,10 +10,18 @@ public class Table {
   public String topCharacter;
 
   public Table(int legs, int width) {
-    this.width = width;
     this.legs = legs;
+    this.width = width;
 
     height = 5;
+  }
+
+  public Table(int legs, int width, int height, String topCharacter, String legCharacter){
+    this.legs = legs;
+    this.width = width;
+    this.height = height;
+    this.topCharacter = topCharacter;
+    this.legCharacter = legCharacter;
   }
 
   // why is it called set legs and not set leg character cuz were not setting the legs

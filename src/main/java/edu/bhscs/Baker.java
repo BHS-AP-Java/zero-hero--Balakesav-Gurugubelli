@@ -4,7 +4,7 @@
 // 9/27
 
 /*
- * DESCRIPTION: Mr. Reiber's baker class
+ * DESCRIPTIO Mr. Reiber's baker class
  *
  * INPUT: Questions about the cake and where the baker lives
  * OUTPUT: Print where the baker works
